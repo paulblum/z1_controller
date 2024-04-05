@@ -69,7 +69,9 @@ $ cd ~/unitree_ws/z1_controller/build
 $ source ../../devel/setup.bash
 $ ./sim_ctrl k
 ```
-press 2 and 3 on your keyboard to set up the robot then to control 
+press 2 and 3 on your keyboard to set up the robot to control 
+
+![image](https://github.com/ansonchen04/z1_controller/assets/148047458/5b188fe4-1c8e-4394-b01e-1cee8f87bb68)
 
 reference https://dev-z1.unitree.com/use/keyboard.html
 
