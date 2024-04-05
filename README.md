@@ -33,17 +33,17 @@ $ catkin_make
 Setting up the environment:
 
 1. Open a terminal
-~~~
+```
 $ cd ~/unitree_ws                                                        
 $ source devel/setup.bash
 $ catkin_make
 $ source devel/setup.bash
-~~~
+```
 ___                     
 Make the Z1 controller
 
 2. Open another terminal
-~~~
+```
 $ cd ~/unitree_ws                                                        
 $ source devel/setup.bash
 $ cd ~/unitree_ws/z1_controller
@@ -51,7 +51,7 @@ $ mkdir build
 $ cd build
 $ cmake ..
 $ make
-~~~
+```
 ___
 Compile and run the AliengoZ1 and Z1 controller:
 ```
@@ -66,31 +66,31 @@ reference https://dev-z1.unitree.com/use/keyboard.html
  - 3: Switches coordinate system to Cartesian coordinates
 
 Open a new terminal
-~~~
+```
 $ cd ~/unitree_ws                                                        
 $ source devel/setup.bash
 $ roslaunch aliengoZ1_description aliengoZ1_gazebo.launch
-~~~
+```
 - This will open up gazebo with the robot.
 
 ___
 Make the robot stand:
 
 3. Open another terminal
-~~~
+```
 $ cd ~/unitree_ws
 $ source devel/setup.bash
 $ rosrun unitree_controller unitree_servo
-~~~
+```
 ___
 RQT (Optional):
 
 4. Open another terminal
-~~~
+```
 $ cd ~/unitree_ws
 $ source devel/setup.bash
 $ rqt_graph
-~~~
+```
 ___
 Documentation:
 
