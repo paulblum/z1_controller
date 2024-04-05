@@ -1,22 +1,48 @@
+# Setup
+Prerequisites:
+ - Ubuntu 20.04
+ - ROS Noetic (only tested on this version)
+ - unitree_ros
+ - unitree_ros_to_real
+ - unitree_legged_sdk
+ - z1_sdk
+ - z1_controller
+
+Setup catkin workspace
+```
+$ source /opt/ros/noetic/setup.bash
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+
+Install unitree_ros, unitree_ros_to_real, unitree_legged_sdk, z1_sdk, and z1_controller
+```
+$ cd src
+$ git clone https://github.com/unitreerobotics/unitree_ros.git
+$ git clone https://github.com/unitreerobotics/unitree_ros_to_real.git
+$ cd ..
+$ git clone https://github.com/unitreerobotics/z1_sdk.git
+$ git clone https://github.com/paulblum/z1_controller.git
+# also download https://github.com/unitreerobotics/unitree_legged_sdk/releases and move it into src
+```
+
+
+
 # Launching and Running AliengoZ1
 Setting up the environment:
 
-1. Open a new terminal
+2. Open a terminal
 ~~~
-roscore
-~~~
-___
-2. Open another terminal
-~~~
-cd ~/unitree_ws                                                        
-source devel/setup.bash
-catkin_make
-source devel/setup.bash
+$ cd ~/unitree_ws                                                        
+$ source devel/setup.bash
+$ catkin_make
+$ source devel/setup.bash
 ~~~
 ___                     
 Run the AliengoZ1 in Gazebo:
 ~~~
-roslaunch aliengoZ1_description aliengoZ1_gazebo.launch
+$ roslaunch aliengoZ1_description aliengoZ1_gazebo.launch
 ~~~
 - This will open up gazebo with the robot.
 ___
@@ -24,14 +50,14 @@ Compile and run Z1 controller
 
 3. Open another terminal
 ~~~
-cd ~/unitree_ws                                                        
-source devel/setup.bash
-cd ~/unitree_ws/z1_controller
-mkdir build
-cd build
-cmake ..
-make
-./sim_ctrl k
+$ cd ~/unitree_ws                                                        
+$ source devel/setup.bash
+$ cd ~/unitree_ws/z1_controller
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ ./sim_ctrl k
 ~~~
 press 2 and 3 on your keyboard to set up the robot then to control 
 
@@ -45,18 +71,18 @@ Make the robot stand:
 
 4. Open another terminal
 ~~~
-cd ~/unitree_ws
-source devel/setup.bash
-rosrun unitree_controller unitree_servo
+$ cd ~/unitree_ws
+$ source devel/setup.bash
+$ rosrun unitree_controller unitree_servo
 ~~~
 ___
 RQT (Optional):
 
 5. Open another terminal
 ~~~
-cd ~/unitree_ws
-source devel/setup.bash
-rqt_graph
+$ cd ~/unitree_ws
+$ source devel/setup.bash
+$ rqt_graph
 ~~~
 ___
 Documentation:
