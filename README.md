@@ -19,27 +19,13 @@ $ catkin_make
 Install unitree_ros, unitree_ros_to_real, unitree_legged_sdk, z1_sdk, and z1_controller
 ```
 $ cd src
-$ git clone https://github.com/unitreerobotics/unitree_ros.git
-$ git clone https://github.com/unitreerobotics/unitree_ros_to_real.git
+$ git clone --recurse-submodules https://github.com/unitreerobotics/unitree_ros.git
 $ cd ..
-$ git clone https://github.com/unitreerobotics/z1_sdk.git
+$ catkin_make
+$ source devel/setup.bash
 $ git clone https://github.com/paulblum/z1_controller.git
-# also download https://github.com/unitreerobotics/unitree_legged_sdk/releases and move it into src
-$ catkin_make
 ```
 
-
-# Launching and Running AliengoZ1
-Setting up the environment:
-
-1. Open a terminal
-```
-$ cd ~/unitree_ws                                                        
-$ source devel/setup.bash
-$ catkin_make
-$ source devel/setup.bash
-```
-___                     
 Make the Z1 controller:
 
 2. Open another terminal
@@ -52,9 +38,35 @@ $ cd build
 $ cmake ..
 $ make
 ```
-___
-Compile and run the AliengoZ1 and Z1 controller:
+
+
+# Launching and Running AliengoZ1
+Setting up the environment:
+
+1. Open a terminal
 ```
+$ cd ~/unitree_ws                                                        
+$ source devel/setup.bash
+```                  
+
+___
+Run AliengoZ1
+
+Open a new terminal
+```
+$ cd ~/unitree_ws                                                        
+$ source devel/setup.bash
+$ roslaunch aliengoZ1_description aliengoZ1_gazebo.launch
+```
+- This will open up gazebo with the robot.
+___
+
+Run the Z1 controller:
+
+Open a new terminal
+```
+$ cd ~/unitree_ws/z1_controller/build                                                        
+$ source ../../devel/setup.bash
 $ ./sim_ctrl k
 ```
 press 2 and 3 on your keyboard to set up the robot then to control 
@@ -64,14 +76,6 @@ reference https://dev-z1.unitree.com/use/keyboard.html
  - 2: Caliberates the joints to 'zero'
 
  - 3: Switches coordinate system to Cartesian coordinates
-
-Open a new terminal
-```
-$ cd ~/unitree_ws                                                        
-$ source devel/setup.bash
-$ roslaunch aliengoZ1_description aliengoZ1_gazebo.launch
-```
-- This will open up gazebo with the robot.
 
 ___
 Make the robot stand:
