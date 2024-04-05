@@ -40,7 +40,7 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 ___                     
-Make the Z1 controller
+Make the Z1 controller:
 
 2. Open another terminal
 ```
